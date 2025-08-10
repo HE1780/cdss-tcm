@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCM Clinical Decision Support System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>中医智能临床辅助诊疗系统</h1>
+        <h2>(TCM Intelligent Clinical Decision Support System)</h2>
+    </header>
+
+    <main>
+        <section id="medication-plans">
+            <h2>Current Medication Plans</h2>
+            <div id="plans-list">
+                <!-- Medication plans will be dynamically loaded here -->
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="add-plan-form">
+            <h2>Add New Medication Plan</h2>
+            <form id="med-form">
+                <div class="form-group">
+                    <label for="patientId">Patient ID:</label>
+                    <input type="text" id="patientId" name="patientId" required value="60d5ecb3a3a7b2a8a8f4e3b1"> <!-- Example Patient ID -->
+                </div>
+
+                <div class="form-group">
+                    <label for="medicationName">Medication Name:</label>
+                    <input type="text" id="medicationName" name="medicationName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="dosage">Dosage:</label>
+                    <input type="text" id="dosage" name="dosage" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="type">Type:</label>
+                    <select id="type" name="type" required>
+                        <option value="western">Western</option>
+                        <option value="tcm">TCM</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="ingredients-group" style="display: none;">
+                    <label for="ingredients">Ingredients (comma-separated for TCM):</label>
+                    <input type="text" id="ingredients" name="ingredients">
+                </div>
+
+                <div class="form-group">
+                    <label for="schedule">Schedule:</label>
+                    <input type="text" id="schedule" name="schedule" required placeholder="e.g., Twice a day with meals">
+                </div>
+
+                <button type="submit">Add Plan</button>
+            </form>
+            <div id="form-message"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
